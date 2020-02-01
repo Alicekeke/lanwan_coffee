@@ -1,0 +1,123 @@
+@import '/assests/fonts/iconfont.wxss';
+.cart-box{
+  padding-bottom: 80rpx;
+}
+.cart-list{
+  position: relative;
+  padding: 20rpx 20rpx 20rpx 256rpx;
+  height: 136rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+}
+/* 左侧选中icon */
+.cart-list .cart-select{
+  position: absolute;
+  left: 20rpx;
+  top: 90rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
+.cart-list .cart-goods{
+position: absolute;
+left: 85rpx;
+}
+.cart-list .cart-goods image{
+width: 140rpx;
+height: 140rpx;
+border-radius: 10rpx;
+}
+.cart-list .name{
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.cart-list .info {
+  position: absolute;
+  top: 80rpx;
+  left: 260rpx;
+  font-size: 20rpx;
+  color: #999;
+}
+.cart-list .price{
+  position: absolute;
+  top: 130rpx;
+  left: 270rpx;
+  font-size: 27rpx;
+  color: #f40;
+}
+.cart-list .cart-count-box{
+  position: absolute;
+  right: 50rpx;
+  bottom: 20rpx;
+}
+.cart-list .cart-count-box view{
+  display: inline-block;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 37rpx;
+}
+.iconfont{
+  font-size: 40rpx;
+  color: #78aaca;
+  /* position: absolute; */
+  /* right:10rpx; */
+  /* bottom:30rpx; */
+  width: 44rpx;
+  /* height: 100%; */
+}
+.cart-count-num{
+  width: 80rpx;
+}
+.cart-del{
+  position: absolute;
+  right: 30rpx;
+  top: 25rpx;
+}
+.cart-del image {
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.cart-footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  /* width: 100%; */
+  height: 90rpx;
+  line-height: 90rpx;
+  padding:0 100rpx 0 80rpx;
+  margin-bottom: 10rpx;
+  box-sizing: border-box;
+}
+.cart-footer text {
+  font-size: 30rpx;
+
+}
+.cart-footer .pay {
+  position: fixed;
+  width: 164rpx;
+  border-radius: 50rpx;
+  color: #fff;
+  background-color: #78aaca;
+  right: 60rpx;
+  font-size: 32rpx;
+  text-align: center;
+  font-weight: bold
+}
+.cart-footer .cart-total-price{
+  float: right;
+  width: 120rpx;
+  color: #f40;
+  font-size: 40rpx;
+}
+.total-select{
+  position: absolute;
+  left: 20rpx;
+  top: 25rpx;
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.cart-no-data{
+  padding:40rpx 0;
+  color: #999;
+  text-align: center;
+}

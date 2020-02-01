@@ -1,0 +1,94 @@
+/* pages/index/index.wxss */
+@import "/assests/fonts/iconfont.wxss";
+.logo-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content:center;
+  margin-top: 100rpx;
+  margin-bottom: 60rpx;
+}
+.logo{
+  width: 60%;
+  justify-content: center;
+  height: 230rpx;
+  /* overflow: hidden; */
+  position: relative;
+}
+.pop-wrapper {
+  position: absolute;
+  left: 500rpx;
+  top: 50rpx;
+}
+.chat-bubble {
+  position: absolute;
+  width: 86px;
+  height: 31px;
+  border-radius: 9px;
+  background-color: #78aaca;
+  color: #fff;
+  text-align: center;
+  line-height: 32px;
+  font-size: .8em;
+  animation: pop 3s ease 1;
+  /* 定义transform缩放基点 */
+  transform-origin:left bottom;
+  animation-delay: 5s;
+}
+.chat-bubble:before {
+  content: '';
+  position: absolute;
+  border-top: 7px solid #78aaca;
+  border-left: 7px solid #78aaca;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  top: 25px;
+  left: 0px;
+  z-index: 2;
+}
+@keyframes pop{
+  from {transform: scale(0.2,0.2);}
+  to {transform: scale(1, 1);}
+}
+
+
+.sologn-wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50rpx;
+}
+.sologn-wrapper .sologn{
+  color: #666;
+  font-size: 12px;
+}
+.container {
+  padding: 30rpx;
+}
+
+.container .list .item {
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid #eee; */
+  box-shadow: 3px 3px 9px 2px #ccc;
+  padding: 25rpx;
+}
+
+.container .list .item .title {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.container .list .item .entitle {
+  font-size: 26rpx;
+  color: #ccc;
+  margin-top: 10rpx;
+}
+
+.iconfont {
+  font-size: 56rpx;
+  border-radius: 50%;
+  color:#78aaca;
+  padding: 10px;
+}

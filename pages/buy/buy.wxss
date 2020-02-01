@@ -1,0 +1,210 @@
+/* pages/buy/buy.wxss */
+@import '/assests/fonts/iconfont.wxss';
+.container {
+  display: flex;
+  font-size: 28rpx;
+  /* 动态计算高度 */
+  height: calc(100vh- 780px);
+}
+
+.container .left {
+  width: 220rpx;
+  background: #f6f6f6;
+  float: left;
+  height: 100%;
+  border-right: 1px solid #ddd;
+  box-sizing: border-box;
+}
+/* 给右侧竖向一个纵向的高度 */
+.right{
+  float: right;
+  width: 600rpx;
+  height: 100%;
+  overflow: hidden;
+  padding-left: 20rpx;
+  flex: 1;
+}
+/* 一个节快占满一屏 */
+.selection{
+  min-height: 100%;
+  box-sizing: border-box;
+}
+.container .left .item {
+  padding: 35rpx 30rpx;
+  border-left: solid 10rpx transparent;
+  text-align: center;
+  position: relative;
+  color: gray;
+}
+
+.container .left view.tip {
+  font-size: 20rpx;
+  position: absolute;
+  right: 0px;
+  background: orangered;
+  color: #fff;
+  top: 0px;
+  height: auto;
+  padding: 2rpx 5rpx;
+}
+
+.container .left view.active {
+  border-left: solid 10rpx #7ba9cd;
+  background: #fff;
+  color: #7ba9cd;
+}
+
+.content .item{
+  display: flex;
+  position: relative;
+  padding:18rpx 0;
+  border-bottom: 1px solid #eee;
+}
+.content .item image {
+   width: 140rpx;
+   height: 140rpx; 
+   border-radius: 10rpx;
+}
+.content .item-detail {
+  padding:0 20rpx;
+  font-weight: bold;
+}
+.content .item-detail view:nth-child(2) {
+  font-size:22rpx;
+  color:#ccc;
+  margin:10rpx 0 20rpx 0;
+}
+.iconfont {
+  color: #78aaca;
+  position: absolute;
+  right:10rpx;
+  bottom:30rpx;
+  font-size:52rpx;
+  margin-right: 20rpx;
+}
+.modal {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+}
+.scroll-view-H {
+  height: 80%;
+  white-space: nowrap;
+}
+.Hori-item {
+  display: inline-block;
+}
+.Hori-item-cell {
+  display: inline-block;
+}
+.modal-content {
+  width: 80%;
+  margin-left: 80rpx;
+  position: relative;
+  background: #fff;
+  border-radius: 20rpx;
+  padding-bottom: 25rpx;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.close-icon {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.img {
+  height: 300rpx;
+  width: 100%;
+}
+.modal-content .title {
+  position: absolute;
+  top: 200rpx; 
+  left: 40rpx; 
+  font-size: 40rpx;
+  color: #fff;
+}
+.modal-content .intro {
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  color: #a9a9a9;
+} 
+.P2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx;
+}
+
+.counter {
+  align-items: center;
+  display: flex;
+}
+
+.counter view {
+  width: 50rpx;
+  height: 50rpx;
+  text-align: center;
+  color: #78aaca;
+  font-size: bold;
+}
+
+.counter .btn {
+  border-radius: 50%;
+  border:1px solid #78aaca;
+}
+
+.counter .jian {
+  border-color:  #78aaca;
+}
+
+.counter .jia {
+  background: #78aaca;
+  color: #fff;
+}
+.btns{
+  padding:20rpx 70rpx 20rpx 20rpx;
+}
+.btns view{
+  font-size: 30rpx;
+  padding:15rpx 0;
+  background: #78aaca;
+  text-align: center;
+  color:#fff;
+  border-radius:10rpx; 
+}
+.switchIcon{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 110rpx;
+}
+.switchIcon .goright {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 200rpx;
+  border-top: 4px solid #fff;
+	border-right: 4px solid #fff;
+	transform: rotate(45deg);
+  padding: 10rpx;     /*给padding增大用户可触碰面积*/
+  box-sizing:border-box;    /*把元素的内外边距都塞到盒子里面 包含boeder 不让盒子变形 让可触的面积增大*/
+}
+.switchIcon .goleft {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 200rpx;
+  border-bottom: 4px solid #fff;
+	border-left: 4px solid #fff;
+	transform: rotate(45deg);
+  box-sizing: border-box;
+  padding: 10rpx;
+}

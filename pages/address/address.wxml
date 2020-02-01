@@ -1,0 +1,16 @@
+
+<view class="pic">
+
+</view>
+<view class="map-box">
+  <map name="" id="myMap" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" markers='{{markers}}' bindmarkertap="markertap" show-location style="width:100%; height:{{mapHeight}}px">
+    <!-- 可以在地图之上 cover-image -->
+    <cover-image class="map-icon map-icon_user" src="/assests/icons/icon-user.png" bindtap="calluser" />
+    <cover-image class="map-icon map-icon_reset" src="/assests/icons/reset.png" bindtap="toReset" />
+  </map>
+  <view class="detail">
+    <view>蓝湾咖啡</view>
+    <view class="addr">街心花园恒安西路28号建设银行旁</view>
+    <image class="go" src="../../assests/icons/go.svg" bindtap="go"></image>
+  </view>
+</view>

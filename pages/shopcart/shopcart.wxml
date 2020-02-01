@@ -1,0 +1,46 @@
+<!--pages/cart/cart.wxml-->
+<view class="main">
+  <view wx:if="{{hasList}}">
+    <view class="cart-box">
+      <!-- wx:key="{{index}}"index索引做唯一标识 item或为重复项-->
+
+      <view class="cart-list" wx:for="{{carts}}" wx:key="{{index}}" bindlongtap="longpress" data-index="{{index}}">
+        <!-- <movable-area style="width: 100%">
+          <movable-view style="width: 100%"> -->
+        <!--  -->
+        <icon wx:if="{{item.selected}}" type="success" size="17" color="#7ba9cd" data-index="{{index}}" bindtap="selectList" class="cart-select" />
+        <icon wx:else type="circle" size="23" data-index="{{index}}" bindtap="selectList" class="cart-select" />
+        <view class="cart-goods">
+          <image src="{{item.img}}" />
+        </view>
+        <text class="name">{{item.name}}</text>
+        <text class="info">无糖/全奶</text>
+        <text class="price">￥{{item.price}}</text>
+        <!-- 商品加减，删除 小框-->
+        <view class="cart-count-box">
+          <view class="iconfont icon-jian-tianchong" bindtap="jianCount" data-index="{{index}}"></view>
+          <view class="cart-count-num">{{item.buycount}}</view>
+          <view class="iconfont icon-jia" bindtap="addCount" data-index="{{index}}"></view>
+        </view>
+        <!-- </movable-view>
+        </movable-area> -->
+      </view>
+    </view>
+
+    <!-- 底部结算 -->
+    <view class="cart-footer">
+      <icon wx:if="{{selectAllStatus}}" class="total-select" type="success" size="20" color="#7ba9cd" bindtap="selectAll" />
+      <!-- 一样的icon实现全选 | 非全选 -->
+      <icon wx:else class="total-select" type="circle" size="23" color="#7ba9cd" bindtap="selectAll" />
+      <text>应付合计：</text>
+      <text class="cart-total-price">￥{{totalPrice}}</text>
+      <text class="pay" bindtap="pay" data-totalPrice="{{totalPrice}}">去结算</text>
+    </view>
+  </view>
+
+  <view wx:else>
+    <view class="cart-no-data">
+      <text> 这里什么都没有 (´×ω×`) </text>
+    </view>
+  </view>
+</view>

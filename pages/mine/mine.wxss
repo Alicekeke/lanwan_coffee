@@ -1,0 +1,57 @@
+/* pages/user/user.wxss */
+.bg {
+  height: 180px;
+  width: 100%;
+}
+.header{
+  position: relative;
+  height: 160rpx;
+  line-height: 100rpx;
+  padding:30rpx 30rpx 30rpx 150rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: #fff;
+}
+.header .thumb{
+  position: absolute;
+  left: 30rpx;
+  top: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.header .nickname {
+  color: #999;
+}
+.header .about{
+  color: #999;
+  position: absolute;
+  right: 0;
+  margin-right: 50rpx;
+}
+
+.more{
+  border-bottom: 20rpx solid #ededed;
+  color: #999;
+  line-height: 90rpx;
+  font-size: 28rpx;
+}
+.more .list{
+  position: relative;
+  height: 90rpx;
+  border-bottom: 1rpx solid #e9e9e9;
+  text-align: center;
+}
+/* 使用伪类做一个箭头 */
+.more .list::after{
+  position: absolute;
+  right: 30rpx;
+  top: 34rpx;
+  content: '';
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 4rpx solid #2585F1;
+  border-right: 4rpx solid #2585F1;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

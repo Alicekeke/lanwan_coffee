@@ -1,0 +1,21 @@
+<!--pages/mine/index.wxml-->
+<view class="main">
+  <image class="bg" src="../../assests/icons/bg1.jpg" />
+  <view class="header">
+    <!-- 获取用户信息，昵称 -->
+    <open-data class="thumb" type="userAvatarUrl" open-gid="" />
+    <open-data class="nickname" type="userNickName" open-gid="" lang="zh_CN" />
+    <text class="about" style="color: #999;" bindtap="showAbout">关于</text>
+  </view>
+  <view class="more">
+    <view class="list">
+      <view>新年快乐</view>
+    </view>
+    <view class="list" bindtap="showWifi">
+      <view>WiFi 密码</view>
+    </view>
+    <view class="list" bindtap="showDiscount">
+      <view>优惠券</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/buy/buy",
+    "pages/address/address",
+    "pages/shopcart/shopcart",
+    "pages/mine/mine",
+    "pages/room/room"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "一家咖啡店",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#2585F1",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assests/icons/bear.png",
+        "selectedIconPath": "assests/icons/bearing.png"
+      },
+      {
+        "pagePath": "pages/buy/buy",
+        "text": "菜单",
+        "iconPath": "assests/icons/coffee.png",
+        "selectedIconPath": "assests/icons/coffeeing.png"
+      },
+      
+      {
+        "pagePath": "pages/shopcart/shopcart",
+        "text": "购物车",
+        "iconPath": "assests/icons/buycar.png",
+        "selectedIconPath": "assests/icons/buycaring.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "assests/icons/person.png",
+        "selectedIconPath": "assests/icons/personing.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

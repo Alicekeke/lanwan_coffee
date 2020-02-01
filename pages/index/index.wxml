@@ -1,0 +1,38 @@
+<view class="logo-wrapper">
+  <image class="logo" src="../../assests/icons/logo.png" />
+  <view class="pop-wrapper" animation="{{animation}}">
+    <view class="chat-bubble">{{welcome}}</view>
+  </view>
+</view>
+<view class="sologn-wrapper">
+  <view class="sologn">{{slogan[random]}}</view>
+</view>
+<view class='container'>
+  <view class='list'>
+    <!-- 下单 -->
+    <navigator open-type="switchTab" url="../buy/buy" class="item">
+      <view class='left'>
+        <view class='title'>现在下单</view>
+        <view class='entitle'>ORDER NOW</view>
+      </view>
+      <view class='iconfont icon-icon-test' />
+    </navigator>
+    <!-- 包厢预定 -->
+    <navigator class="item" open-type="navigate" url="../room/room">
+      <view class='left'>
+        <view class='title'>预定房间</view>
+        <view class='entitle'>ORDER ROOM</view>
+      </view>
+      <view class='iconfont icon-wo' />
+    </navigator>
+    <!-- 门店地址 -->
+    <navigator open-type="navigate" url="../address/address" class="item">
+      <!-- <navigator open-type="switchTab" url="../buy/buy" class="item"> -->
+      <view class='left'>
+        <view class='title' url="../address/address">门店地址</view>
+        <view class='entitle'>ADDRESS</view>
+      </view>
+      <view class='iconfont icon-location' />
+    </navigator>
+  </view>
+</view>

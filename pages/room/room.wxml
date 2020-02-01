@@ -1,0 +1,10 @@
+<!--pages/room/room.wxml-->
+<view class="container">
+  <view class="item" wx:for="{{roomlist}}" wx:key="{{item.id}}" bindtap="orderRoom" data-id="{{item.id}}">
+  <image src="../../assests/icons/coffeeing.png"></image>
+    <view class="right-conner">
+      <view class="name">{{item.name}}</view>
+      <view class="people">房间最大容纳人数： {{item.peo}}</view>
+    </view>
+  </view>
+</view>

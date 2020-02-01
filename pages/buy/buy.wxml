@@ -1,0 +1,77 @@
+<view class="container">
+  <!-- 左侧菜单 -->
+  <scroll-view class="left" scroll-y="true" scroll-into-view="{{vertToView}}" scroll-with-animation="{{true}}">
+    <view class="item {{activeType===index?'active':''}}" data-id="{{item.id}}" bindtap="changeType" wx:for="{{menulist}}" data-index="{{index}}" wx:key="{{item.id}}">
+      {{item.name}}
+      <view wx:if="{{item.tip}}" class="tip">{{item.tip}}</view>
+    </view>
+  </scroll-view>
+  <!-- 右侧菜单 -->
+  <scroll-view class="right" bindscroll="vertScroll" scroll-with-animation="true" scroll-into-view="{{vertToView}}" scroll-y="true" style="height: {{asideheight}}px;">
+    <!-- veri-out -->
+    <view id="{{item.id}}" class="selection" wx:for="{{goodslist}}" wx:key="item.id">
+      <!-- 分类标识 -->
+      <view>
+        <view>{{item.name}}</view>
+        <view />
+      </view>
+      <view class="content">
+        <!-- veri-in -->
+        <view id="{{product.english_name}}" class="item" wx:for="{{item.goodslist}}" wx:key="index.english_name" wx:for-item="product">
+          <view bindtap="showmodal" data-index="{{item.index}}" data-id="{{product.english_name}}">
+            <image src="{{product.src}}" />
+          </view>
+          <view class="item-detail">
+            <view>{{product.name}}</view>
+            <view>{{product.english_name}}</view>
+            <view>￥{{product.price}}</view>
+          </view>
+          <view class="iconfont icon-jia" bindtap="showmodal" data-index="{{item.index}}" data-id="{{product.english_name}}" />
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<!-- 弹出层详情列表 -->
+<view hidden="{{ishiddenmodal}}" class="modal">
+  <scroll-view scroll-x="true" bindscroll="horiScroll" style="width:100%" class="scroll-view-H" scroll-with-animation="true" scroll-into-view="{{horiToView}}">
+    <!-- out -->
+    <view id="{{item.id}}" wx:for="{{goodslist}}" wx:key="item.id" class="Hori-item">
+      <!-- in -->
+      <view id="{{product.english_name}}" wx:for="{{item.goodslist}}" wx:key="index.english_name" wx:for-item="product" class="Hori-item-cell" style="width: {{asidewidth}}px;">
+        <view class="modal-content">
+          <icon bindtap="closemodal" data-id="{{product.english_name}}" type="clear" size="23" class="close-icon" />
+          <!-- <view>{{product.id}}</view> -->
+          <image class="img" src="{{product.src}}" />
+          <view class="title">{{product.name}}</view>
+          <view>
+            <!-- 自定义组件menu 监听选择项 -->
+            <menu list="{{wendulist}}" bindchoose="choosewendu" />
+            <menu list="{{tangdulist}}" bindchoose="choosetiandu" />
+            <view class="intro">商品详情： 这是好喝的{{product.name}}</view>
+          </view>
+          <view class="P2">
+            <view>￥{{product.price}}</view>
+            <!-- <view >{{goodslist[chooseItemIndex].goodslist[chooseItemId].name}}</view> -->
+            <view class="counter">
+              <view class="btn jian" bindtap="jian">-</view>
+              <view>{{buyCount}}</view>
+              <view class="btn jia" bindtap="jia">+</view>
+            </view>
+          </view>
+          <view class="btns">
+          <!-- 做唯一标识的应该是id 不是count -->
+            <view bindtap="addcart" data-id="{{product.english_name}}" data-img="{{product.src}}" data-name="{{product.name}}" data-price="{{product.price}}" data-buyCount="{{buyCount}}">
+              加入购物车
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 左右切换小三角 -->
+  <view class="switchIcon">
+    <view class="switch goleft" bindtap="goLeft" data-index="{{itemCount}}" data-id="{{itemlist[itemCount-1].id}}" style="{{itemlist[itemCount].id === 'CaramelMacchiato' ? 'border-color:#a9a9a9' : ''}}" />
+    <view class="switch goright" bindtap="goRight" data-index="{{itemCount}}" data-id="{{itemlist[itemCount+1].id}}" style="{{itemlist[itemCount-1].id === 'beefpizza' ? 'border-color:#a9a9a9' : ''}}" />
+  </view>
+</view>
